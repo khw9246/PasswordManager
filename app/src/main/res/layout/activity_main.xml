@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://tools.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 상단 타이틀 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새 비밀번호 등록"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- 1. 사이트 이름 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사이트 이름"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/et_site_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="예: Google, Naver"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 2. 아이디 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 또는 이메일"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/et_user_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="example@email.com"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 3. 비밀번호 -->
+        <TextView
+            android:id="@+id/tv_strength_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="비밀번호를 입력하세요"
+                android:inputType="textPassword"/>
+
+            <ImageButton
+                android:id="@+id/btn_toggle_visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_view"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- 5. 비밀번호 강도 프로그레스바 -->
+        <ProgressBar
+            android:id="@+id/pb_password_strength"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="4"
+            android:progress="0"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 6. 비밀번호 추천 버튼 -->
+        <Button
+            android:id="@+id/btn_generate_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="안전한 비밀번호 추천받기"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- 하단 배치를 위한 여백용 뷰 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- 7. 저장 버튼 -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="암호화하여 저장하기"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 8. 저장된 비밀번호 목록 보기 버튼 -->
+        <Button
+            android:id="@+id/btn_view_list"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장된 비밀번호 목록 보기"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
